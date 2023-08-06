@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 def license_reminder(request):
     customers=Customer.objects.all()
-    return render(request,'home.html',{'customers':customers})
+    return render(request,'home.html',{'customers':customers,'date':date})
 
 
 

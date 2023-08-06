@@ -25,6 +25,7 @@ class Customer(models.Model):
     expiry_date=models.DateField()
     def __str__(self):
         return self.name
+    
     @property
     def remain_days(self):
         days= self.expiry_date - date.today()
@@ -32,5 +33,5 @@ class Customer(models.Model):
         days_int= int(days_stripped)
         if days_int <= 90:
             print(f'EMAIL WAS SENT')
-            #return HttpResponse('Email sent successfully!')
+            return HttpResponse('Email sent successfully!')
         return days_int
