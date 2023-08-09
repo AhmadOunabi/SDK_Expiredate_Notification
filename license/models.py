@@ -35,9 +35,9 @@ class Customer(models.Model):
         if days_int <= 90:
             send_mail(
                 "SDK Expiration",
-                "Hi  the License will expire soon ",
+                f"Hi {self.name} the License will expire soon ",
                 "ahmad_ounabi@yahoo.com",
-                [],
+                [f'{self.email}'],
                 fail_silently=False,
             )
             return HttpResponse('Email sent successfully!')
